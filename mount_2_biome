@@ -1,0 +1,13 @@
+team.2.pos = (39,-41,-99)
+r = 115
+team.1.pos = (-62,-50,76)
+initial_stuff = default:pick_steel, default:sword_steel, default:torch 15
+team.2 = blue
+rotation = x
+name = Mountain with 2 Biomes
+author = Keysight
+h = 140
+team.1.color = red
+team.1 = red
+team.2.color = blue
+
