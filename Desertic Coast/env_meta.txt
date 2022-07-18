@@ -1,0 +1,7 @@
+day_count = 11
+lbm_introduction_times = :doors:replace_ctf_teams_door_steel~0;:doors:replace_ctf_teams_door_steel_blue~0;:doors:replace_ctf_teams_door_steel_green~0;:doors:replace_ctf_teams_door_steel_orange~0;:doors:replace_ctf_teams_door_steel_purple~0;:doors:replace_ctf_teams_door_steel_red~0;:doors:replace_doors_door_glass~0;:doors:replace_doors_door_obsidian_glass~0;:doors:replace_doors_door_steel~0;:doors:replace_doors_door_wood~0;:doors:replace_xpanes_door_steel_bar~0;default:3dtorch~0;default:convert_saplings_to_node_timer~0;default:upgrade_chest_locked_v2~0;default:upgrade_chest_v2~0;xpanes:gen2~0;
+lbm_introduction_times_version = 1
+last_clear_objects_time = 0
+time_of_day = 2309
+game_time = 13001
+EnvArgsEnd

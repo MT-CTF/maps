@@ -1,0 +1,16 @@
+enable_damage = true
+creative_mode = true
+mod_storage_backend = sqlite3
+auth_backend = sqlite3
+player_backend = sqlite3
+backend = sqlite3
+gameid = capturetheflag
+world_name = Flying stuff
+server_announce = false
+load_mod_worldedit_shortcommands = false
+load_mod_worldedit_gui = false
+load_mod_worldedit = false
+load_mod_map_maker = false
+load_mod_ctf_map_core = false
+load_mod_worldedit_commands = false
+load_mod_worldedit_brush = false
