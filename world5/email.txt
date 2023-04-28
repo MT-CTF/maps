@@ -1,1 +1,0 @@
-return {ver_min=1,mod="email",version=1,inboxes={}}
