@@ -31,14 +31,10 @@ ctf_api.register_on_new_match(function()
 	end
 end)
 
-ctf_api.register_on_flag_take(function()
-	if ctf_map.current_map.dirname == "ant_war" and closed and math.random(5) == 1 then
+ctf_api.register_on_flag_capture(function()
+	if ctf_map.current_map.dirname == "ant_war" and closed then
 		closed = false
-		minetest.after(math.random(6, 10), function()
-			minetest.chat_send_all(minetest.colorize("#f49200", "The central barriers are about to melt!"))
-			minetest.after(math.random(6, 10), function()
-				set_barriers("default:lava_source")
-			end)
-		end)
+		minetest.chat_send_all(minetest.colorize("#f49200", "The central barriers have weakened!"))
+		set_barriers("default:obsidian")
 	end
 end)
