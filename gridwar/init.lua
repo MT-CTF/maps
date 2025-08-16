@@ -2,7 +2,7 @@ local MAP_NAME = "GridWar"
 local DEATH_BARRIER_Y_OFFSET = 12
 local RESPAWN_Y_OFFSET = 2
 local AIR_LIGHT_LEVEL = 3
-local MESSAGE_INTERVAL = 10
+local MESSAGE_INTERVAL = 600
 
 
 local gridwar_messages = {
@@ -83,7 +83,7 @@ ctf_api.register_on_new_match(function ()
                 message_timer = minetest.after(MESSAGE_INTERVAL, schedule_next_message)
             end
         end
-        message_timer = minetest.after(60, schedule_next_message)
+        message_timer = minetest.after(120, schedule_next_message)
     end
 end)
 
