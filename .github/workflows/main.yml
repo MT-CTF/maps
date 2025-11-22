@@ -1,0 +1,37 @@
+on:
+  pull_request:
+    branches:
+    - master
+jobs:
+  upload_map_folder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: get-changed-folders
+        id: get_changed
+        uses: Stockopedia/action-get-changed-files@v1.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          foldersOnly: true
+          ignore: "maps/**/*"
+      - name: Get a changed folder
+        id: get_last_changed
+        run: |
+          value=$(echo '${{ steps.get_changed.outputs.changed }}' | jq -r '.[-1]')
+          echo $value
+          echo "value=$value" >> $GITHUB_OUTPUT
+      - name: Upload a Build Artifact
+        id: zip_upload
+        uses: actions/upload-artifact@v5.0.0
+        with:
+          name: "${{ steps.get_last_changed.outputs.value }}"
+          # A file, directory or wildcard pattern that describes what to upload
+          path: "${{ github.workspace }}/${{ steps.get_last_changed.outputs.value }}/*"
+          retention-days: 60
+          overwrite: true
+      - name: PR Comment
+        uses: github-actions-up-and-running/pr-comment@v1.0.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: "Map file zip (auto-generated, 60 days): ${{ steps.zip_upload.outputs.artifact-url }}"
