@@ -5,10 +5,6 @@ on:
     branches:
     - master
 
-permissions:
-    pull-requests: write
-    issues: write
-
 jobs:
   upload_map_folder:
     runs-on: ubuntu-latest
@@ -37,8 +33,3 @@ jobs:
           path: "${{ github.workspace }}/${{ steps.get_last_changed.outputs.value }}/*"
           retention-days: 60
           overwrite: true
-      - name: PR Comment
-        uses: github-actions-up-and-running/pr-comment@v1.0.1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          message: "Map file zip (auto-generated, 60 days): ${{ steps.zip_upload.outputs.artifact-url }}"
