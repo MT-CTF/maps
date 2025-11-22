@@ -1,7 +1,14 @@
+name: "Package up map"
+
 on:
   pull_request:
     branches:
     - master
+
+permissions:
+    pull-requests: write
+    issues: write
+
 jobs:
   upload_map_folder:
     runs-on: ubuntu-latest
